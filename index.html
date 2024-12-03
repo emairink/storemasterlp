@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Migration Vtex IO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/spin.js@4.1.1/spin.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/spin.js@4.1.1/spin.min.js"></script>
+  
   <style>
     /* Estilos gerais */
 
@@ -208,57 +212,6 @@
   </section>
   
 
-
-
-  <section class="platforms">
-    <div class="container">
-      <div class="line"></div>
-      <h2> + PLATAFORMAS</h2>
-      <div class="logos">
-        <img src="./images/logos/vtex.png" alt="VTEX">
-        <img src="./images/logos/decocx.png" alt="Deco.cx">
-        <img src="./images/logos/Shopify_Logo.png" alt="Shopify">
-        <img src="./images/logos/uappi_orange.png" alt="Uappi">
-        <img src="./images/logos/logo-wake-commerce.webp" alt="Wake">
-        <img src="./images/logos/woocommerce.png" alt="Woocommerce">
-      </div>
-    </div>
-  
-  <style>
-    /* Seção PLATAFORMAS */
-    .platforms {
-      background-color: #0b1120;
-      text-align: center;
-      padding: 50px 20px;
-      color: #fff;
-    }
-  
-    .platforms .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-  
-    .platforms h2 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 30px;
-    }
-  
-    .platforms .logos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-  
-    .platforms .logos img {
-      width: 200px;
-      height: 50px;
-      object-fit: contain;
-    }
-  </style>
-  </section>
-  
   <section class="why-migrate">
     <div class="container">
       <div class="content">
@@ -342,208 +295,715 @@
 
   </section>
 
-
   <section class="performance-checker">
-        <div class="container">
-          <div class="form_left">
-          <h2>Digite seu site para calcular a performance atual:</h2>
-          <form id="performance-form">
-            <input 
-              type="url" 
-              id="url-input" 
-              placeholder="https://www.exemplo.com" 
-              required 
-            />
-            <button type="submit">Calcular</button>
-            </br> <small> *Pode levar até 2 minutos </small>
-          </form>
+    <div class="container">
+      <div class="form_left">
+      <h2>Digite seu site para calcular a performance atual:</h2>
+      <small> *Pode levar até 2 minutos </small>
+      <form id="performance-form">
+        <input 
+          type="url" 
+          id="url-input" 
+          placeholder="https://www.exemplo.com" 
+          required 
+        />
+        <button type="submit">Calcular</button>
+      </form>
+    </div>
+    <div class="form_right">
+      <div id="loading-spinner" class="loading-spinner hidden"></div>
+
+      <div id="results" class="results hidden">
+        <div class="result-item">
+          <span>Performance:</span>
+          <div class="score-circle" id="performance-score"></div>
+          <small style="position: relative; top: 10px; font-weight: normal;"><a id="know_more" target="_blank" href="#"> Saiba mais </a></small>
         </div>
-        <div class="form_right">
-          <div id="loading-spinner" class="loading-spinner hidden"></div>
+    </div>
+    </div>
+    </div>
 
-          <div id="results" class="results hidden">
-            <div class="result-item">
-              <span>Performance:</span>
-              <div class="score-circle" id="performance-score"></div>
-              <small style="position: relative; top: 10px; font-weight: normal;"><a id="know_more" target="_blank" href="#"> Saiba mais </a></small>
-            </div>
-        </div>
-        </div>
-        </div>
+<style>
+    .performance-checker {
+    background-color: #0b1120;
+    color: #fff;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+    }
 
-    <style>
-        .performance-checker {
-        background-color: #0b1120;
-        color: #fff;
-        padding: 30px 20px;
-        font-family: Arial, sans-serif;
-        }
+    .performance-checker .container {
+    margin: 0 auto;
+    display: flex;   
+    align-items: center;
+    }
 
-        .performance-checker .container {
-        margin: 0 auto;
-        display: flex;   
-        align-items: center;
-        }
-
-        .form_right {
-            display: flex;
-            justify-content: center;
-            width: 50%;
-            flex-wrap: wrap;
-        }
-
-        #url-input {
-        width: calc(100% - 20px);
-        padding: 10px;
-        margin: 10px 0;
-        border: 2px solid #fff;
-        border-radius: 5px;
-        color: #000;
-        }
-
-        button {
-        padding: 10px 20px;
-        border: none;
-        background-color: #ff007f;
-        color: #fff;
-        border-radius: 5px;
-        cursor: pointer;
-        }
-
-        .results {
-        margin-top: 20px;
-        text-align: left;
-        margin-top: 20px;
-        text-align: left;
-        padding: 40px;
-        background: #212121;
-        border-radius: 10px;
-        width: fit-content;
-        }
-
-        .result-item {
+    .form_right {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        flex-direction: column;
-        gap: 11px;
-        font-weight: bold;
-        width: fit-content;
-        }
-
-        .score-circle {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #fff;
-        background-color: #ccc;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        width: 50%;
+        flex-wrap: wrap;
+    }
+
+    #url-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #000;
+    }
+
+    button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff007f;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .results {
+    margin-top: 20px;
+    text-align: left;
+    margin-top: 20px;
+    text-align: left;
+    padding: 40px;
+    background: #212121;
+    border-radius: 10px;
+    width: fit-content;
+    }
+
+    .result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 11px;
+    font-weight: bold;
+    width: fit-content;
+    }
+
+    .score-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .score-circle.low {
+    background-color: #ff4b4b;
+    border: 3px outset #ff0000;
+    }
+
+    .score-circle.medium {
+    background-color: #ffa500; /* Laranja */
+    border: 3px outset #ffa600;
+
+    }
+
+    .score-circle.high {
+        background-color: #00c853; /* Verde */
+        border: 3px outset #2d9e01;
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 6px solid rgba(255, 255, 255, 0.3);
+        border-top: 6px solid #ff007f; /* Cor principal */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+    }
+
+    .hidden {
+    display: none;
+    }
+
+
+    @keyframes spin {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+    }
+
+
+ 
+ </style>
+ <script> 
+    document.getElementById('performance-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const urlInput = document.getElementById('url-input').value;
+    const resultsDiv = document.getElementById('results');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const linkKnowMore = document.getElementById('know_more');
+
+    // Resetar o estado inicial
+    resultsDiv.classList.add('hidden');
+    loadingSpinner.classList.remove('hidden');
+
+    try {
+        linkKnowMore.attributes.href = encodeURIComponent(urlInput);
+        const response = await fetch(
+        `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(urlInput)}`
+        );
+        const data = await response.json();
+
+        if (data.lighthouseResult) {
+        const performanceScore = data.lighthouseResult.categories.performance.score * 100;
+
+        const scoreElement = document.getElementById('performance-score');
+        scoreElement.textContent = performanceScore;
+
+        if (performanceScore < 50) {
+            scoreElement.className = 'score-circle low';
+        } else if (performanceScore < 90) {
+            scoreElement.className = 'score-circle medium';
+        } else {
+            scoreElement.className = 'score-circle high';
         }
 
-        .score-circle.low {
-        background-color: #ff4b4b; /* Vermelho */
-        border: 3px outset #ff0000;
+        resultsDiv.classList.remove('hidden');
+        } else {
+        alert('Não foi possível calcular as métricas. Verifique o URL.');
         }
+    } catch (error) {
+        console.error(error);
+        alert('Erro ao conectar à API. Tente novamente mais tarde.');
+    } finally {
+        loadingSpinner.classList.add('hidden');
+    }
+});
 
-        .score-circle.medium {
-        background-color: #ffa500; /* Laranja */
-        border: 3px outset #ffa600;
 
-        }
+ 
+     
+     
+ </script>
+</section>
 
-        .score-circle.high {
-            background-color: #00c853; /* Verde */
-            border: 3px outset #2d9e01;
-        }
+    <a href="#" class="cta" style="text-align: center; display: flex ;max-width: 300px; margin: 50px auto; justify-content: center;"> Quero Migrar Agora </a>
 
-        /* Estilo do spinner */
-.loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 6px solid rgba(255, 255, 255, 0.3);
-  border-top: 6px solid #ff007f; /* Cor principal */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
+
+    <section class="morePerformanceInfos">
+        <div class="container">
+
+        </div>   
+    </section>
+
+
+
+  <section class="platforms">
+    <div class="container">
+      <div class="line"></div>
+      <h2> + PLATAFORMAS</h2>
+      <div class="logos">
+        <img src="./images/logos/vtex.png" alt="VTEX">
+        <img src="./images/logos/decocx.png" alt="Deco.cx">
+        <img src="./images/logos/Shopify_Logo.png" alt="Shopify">
+        <img src="./images/logos/uappi_orange.png" alt="Uappi">
+        <img src="./images/logos/logo-wake-commerce.webp" alt="Wake">
+        <img src="./images/logos/woocommerce.png" alt="Woocommerce">
+      </div>
+    </div>
+  
+  <style>
+    /* Seção PLATAFORMAS */
+    .platforms {
+      background-color: #0b1120;
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+    }
+  
+    .platforms .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .platforms h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  
+    .platforms .logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: 55px;
+      column-gap: 100px;
+    }
+  
+    .platforms .logos img {
+      width: 200px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+
+
+    /* Seção principal */
+.pricing-section {
+  background-color: #0a0f28;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
 }
 
-/* Esconder spinner */
+/* Título */
+.pricing-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards container */
+.pricing-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .pricing-cards {
+    flex-direction: row;
+  }
+}
+
+/* Card individual */
+.pricing-card {
+  background-color: #11163a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Preços antigos */
+.old-price {
+  font-size: 1rem;
+  color: #ff4d4d;
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+}
+
+.old-price span {
+  font-weight: bold;
+}
+
+
+.current-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-price {
+  color: #14ff00;
+}
+
+.payment-details {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.payment-details span {
+  font-weight: bold;
+  color: white;
+}
+
+/* Botão */
+.pricing-button {
+  background-color: transparent;
+  border: 2px solid #00aaff;
+  color: #00aaff;
+  padding: 0.5rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pricing-button:hover {
+  background-color: #00aaff;
+  color: white;
+}
+
+  </style>
+  </section>
+
+  <div class="pricing-section">
+    <h2 class="pricing-title">PREÇOS</h2>
+    <p class="pricing-description">
+      Temos um preço único e pagamento facilitado, para incentivar sua migração, basta clicar em "Eu quero" e você será encaminhado para falar conosco e tirar todas as suas dúvidas.
+    </p>
+    <div class="pricing-cards">
+      <!-- Card 1 -->
+      <div class="pricing-card">
+        <p class="old-price">de <span>R$ 19.999</span></p>
+        <p class="current-price">
+          por <span class="highlight-price">R$ 14.999</span>
+        </p>
+        <p class="payment-details">
+          ou em até 3x de R$4.999 sem juros <br> no cartão ou <span>BOLETO BANCÁRIO</span>
+        </p>
+        <button class="pricing-button">EU QUERO</button>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="pricing-card">
+        <p class="old-price">de <span>R$ 200/h</span></p>
+        <p class="current-price">
+          por <span class="highlight-price">R$ 100/h</span>
+        </p>
+        <p class="payment-details">
+          contrato mínimo de <span>10 horas mensais</span>
+        </p>
+        <button class="pricing-button">QUERO SABER MAIS</button>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <footer>
+ 
+
+        <div class="form-container container">
+            <h2 class="form-title">Preencha as informações abaixo e logo entraremos em contato</h2>
+            <form id="contactForm" class="form-grid">
+              <div>
+                <label class="form-label">Nome*
+                  <input type="text" required class="form-input">
+                </label>
+                
+                <label class="form-label">Sobrenome*
+                  <input type="text" required class="form-input">
+                </label>
+                
+                <label class="form-label">Email corporativo*
+                  <input type="email" required class="form-input">
+                </label>
+                
+                <label class="form-label">Telefone (ou whatsapp)*
+                  <input type="tel" required class="form-input">
+                </label>
+                
+                <label class="form-label">Faturamento anual:
+                  <select class="form-input">
+                    <option value="" disabled >Selecionar</option>
+                    <option value="0k-50k"> 0 - R$10,000</option>
+                    <option value="10k-50k"> R$10,000 - R$50,000</option>
+                    <option value="50k-100k">$50,000 - $100,000</option>
+                    <option value="100k-500k">$100,000 - $500,000</option>
+                    <option value="500k-1kk">$500,000 - $1.000.000,00</option>
+                    <option value="1kk+">$1.000.000,00 + </option>
+                  </select>
+                </label>
+              </div>
+              
+              <div>
+                <label class="form-label">Empresa:*
+                  <input type="text" required class="form-input">
+                </label>
+                
+                <label class="form-label">Cargo:
+                  <input type="text" class="form-input">
+                </label>
+
+                <label class="form-label">Serviço desejado:
+                    <select class="form-input">
+                      <option value="" disabled>Selecionar</option>
+                      <option value="migration"> Migração</option>
+                      <option value="implant"> Implantação</option>
+                      <option value="ongoing"> OnGoing / Evolução</option>
+                    </select>
+                  </label>
+                
+                <label class="form-label">Informações adicionais:
+                  <textarea class="form-input form-textarea"></textarea>
+                </label>
+              </div>
+              
+              <div class="form-full-width">
+                <label class="form-agreement">
+                  <input type="checkbox" required class="form-checkbox">
+                  <span>Aceito que meus dados sejam salvos para ser contatado por email ou outros métodos</span>
+                </label>
+              </div>
+              
+              <div class="form-full-width form-submit">
+                <button type="submit" class="form-button">Enviar meu contato</button>
+              </div>
+            </form>
+            <div id="spinner" class="spinner-overlay hidden">
+              <div class="spinner"></div>
+            </div>
+          </div>
+
+          
+
+          <style>
+            /* Container principal */
+.form-container {
+    background-color: #061028;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 0 auto;
+    /* max-width: 800px; */
+}
+.form-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid do formulário */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  /* border-radius: 1px; */
+  margin-top: 0.5rem;
+}
+
+.form-textarea {
+  height: 8rem;
+  resize: none;
+}
+
+.form-agreement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.form-button {
+  color: white;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #ff007f;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.form-full-width {
+  /* grid-column: span 2; */
+}
+
+/* Spinner */
+.spinner-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .hidden {
   display: none;
 }
 
-/* Animação de rotação */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   100% {
     transform: rotate(360deg);
   }
 }
 
- 
-     
-     </style>
-     <script> 
-        document.getElementById('performance-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
+.form-input {
+    color: #999;
+    /* background-color: #00000096; */
+}
 
-        const urlInput = document.getElementById('url-input').value;
-        const resultsDiv = document.getElementById('results');
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const linkKnowMore = document.getElementById('know_more');
+
+          </style>
+    
+        <script>
+            const form = document.getElementById('contactForm');
+            const spinner = document.getElementById('spinner');
+            
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                spinner.classList.remove('hidden');
+                
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                spinner.classList.add('hidden');
+                alert('Obrigado pelo contato! Suas informações foram enviadas com sucesso! Em breve entraremos em contato.');;
+                form.reset();
+            });
+    
+            new Spinner({
+                lines: 12,
+                length: 20,
+                width: 10,
+                radius: 30,
+                scale: 1,
+                corners: 1,
+                color: '#ffffff',
+                speed: 1,
+                rotate: 0,
+                animation: 'spinner-line-fade-more',
+                direction: 1,
+                zIndex: 2e9,
+                className: 'spinner',
+            }).spin(spinner.firstElementChild);
+        </script>
+
+        
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/5599999999999" target="_blank" title="Fale conosco no WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
+        </a>
+    </div>
   
-        // Resetar o estado inicial
-        resultsDiv.classList.add('hidden');
-        loadingSpinner.classList.remove('hidden');
+    <style>
+        /* Widget do WhatsApp */
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
 
-        try {
-            linkKnowMore.attributes.href = encodeURIComponent(urlInput);
-            const response = await fetch(
-            `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(urlInput)}`
-            );
-            const data = await response.json();
+.whatsapp-widget a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-            if (data.lighthouseResult) {
-            const performanceScore = data.lighthouseResult.categories.performance.score * 100;
+.whatsapp-widget a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 
-            const scoreElement = document.getElementById('performance-score');
-            scoreElement.textContent = performanceScore;
+.whatsapp-widget img {
+  width: 50%;
+  height: 50%;
+}
 
-            if (performanceScore < 50) {
-                scoreElement.className = 'score-circle low';
-            } else if (performanceScore < 90) {
-                scoreElement.className = 'score-circle medium';
-            } else {
-                scoreElement.className = 'score-circle high';
-            }
+    </style>
 
-            resultsDiv.classList.remove('hidden');
-            } else {
-            alert('Não foi possível calcular as métricas. Verifique o URL.');
-            }
-        } catch (error) {
-            console.error(error);
-            alert('Erro ao conectar à API. Tente novamente mais tarde.');
-        } finally {
-            loadingSpinner.classList.add('hidden');
-        }
-});
+    <div class="footer-container">
+      <p>&copy; 2024 Store Master. Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ para atender você melhor.</p>
+    </div>
 
- 
-     
-         
-         
-     </script>
-  </section>
 
+    <style>
+        /* Estilo do Footer */
+.footer {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border-top: 2px solid #ff0077; /* Um detalhe colorido para destacar */
+}
+
+.footer-container p {
+  margin: 5px 0;
+  line-height: 1.5;
+  padding: 25px;
+  text-align: center;
+}
+
+.footer-container p:first-child {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-container p:last-child {
+  color: #ff0077;
+  font-size: 14px;
+}
+
+    </style>
+
+    
+  </footer>
   
   
   
