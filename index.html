@@ -157,9 +157,9 @@
     <nav>
       <a href="#">INÍCIO</a>
       <a href="#">QUEM SOMOS</a>
-      <a href="#">CONTATO</a>
-      <a href="#">PREÇOS</a>
       <a href="#">POR QUE MIGRAR?</a>
+      <a href="#">PREÇOS</a>
+      <a href="#">CONTATO</a>
     </nav>
     <a href="#" class="cta"> Quero Migrar Agora </a>
   </header>
@@ -173,10 +173,14 @@
             <h1>Store Master</h1>
       </div>
       <ul class="menu">
-        <li><a href="#home">Início</a></li>
-        <li><a href="#services">Serviços</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#contact">Contato</a></li>
+        <li><a href="#">INÍCIO</a></li>
+        <li><a href="#">QUEM SOMOS</a></li>
+        <li><a href="#">POR QUE MIGRAR?</a></li>
+        <li><a href="#">PREÇOS</a></li>
+        <li><a href="#">CONTATO</a></li>
+
+        <li><a href="#" class="cta"> Quero Migrar Agora </a></li>
+
       </ul>
     </nav>
   </header>
@@ -207,6 +211,11 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+}
+
+.menu.opened {
+    display: block!important;
+    z-index: 9999;
 }
 
 .menu-icon {
@@ -427,6 +436,10 @@
       .performance-checker .container {
         flex-direction: column!important;
         gap: 20px;
+      }
+
+      .menu-open .menu {
+        display: flex!important;
       }
     }
 
@@ -1090,7 +1103,7 @@
 
 
             document.querySelector('.menu-toggle').addEventListener('click', function () {
-                document.querySelector('.navbar').classList.toggle('menu-open');
+                document.querySelector('.menu').classList.toggle('opened');
             });
 
     
