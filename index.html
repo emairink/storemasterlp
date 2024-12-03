@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Migration Vtex IO</title>
+  <style>
+    /* Estilos gerais */
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    
+    @font-face {
+        font-family: 'Monomaniac One Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Monomaniac One Regular'), url('./fonts/MonomaniacOne-Regular.woff') format('woff');
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    h1, p {
+        font-family: 'Monomaniac One Regular';
+        font-weight: normal;
+    }
+
+    body {
+      background-color: #0b1120;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #0b1120;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo::before {
+      content: '🔵';
+      margin-right: 8px;
+    }
+
+    .navbar nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #fff;
+      font-size: .88rem;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #00aaff;
+    }
+
+    .navbar .cta {
+      border: 2px solid #00aaff;
+      padding: 8px 20px;
+      color: #fff;
+
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .navbar .cta:hover {
+      background-color: #00aaff;
+      color: #fff;
+    }
+
+    .cta {
+        font-weight: bold;
+        border: 1px solid #0085FF;
+        box-shadow: -2px 0px 7.9px 5px #0064AD;
+        border-radius: 13px;
+        font-family: "Inder", sans-serif;
+        background-color: #0b1120;
+        color: #ffffff;
+        border: 2px solid #00aaff;
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      height: 500px;
+      background: radial-gradient(circle, #0b1120 80%, #1b2433);
+      background-image: url('./images/banners/banner_dark.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      filter: drop-shadow(2px 4px 6px black);
+    }
+
+
+    .line {
+      width: 150px;
+      height: 15px;
+      background-color: #ff007f; /* Cor rosa para a linha */
+      margin: 0 auto 20px;
+      border-radius: 5px;
+    }
+
+    .container {
+        max-width: 1200px!important;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">StoreMaster</div>
+    <nav>
+      <a href="#">INÍCIO</a>
+      <a href="#">QUEM SOMOS</a>
+      <a href="#">CONTATO</a>
+      <a href="#">PREÇOS</a>
+      <a href="#">POR QUE MIGRAR?</a>
+    </nav>
+    <a href="#" class="cta"> Quero Migrar Agora </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>UMA MIGRAÇÃO VTEX IO DESCOMPLICADA,<br>COM GO-LIVE EM ATÉ 30 DIAS</h1>
+      <a href="#" class="cta"> Quero Migrar Agora </a>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <div class="line"></div>
+      <h2>QUEM SOMOS</h2>
+      <p>
+        Somos um time de desenvolvedores especialistas VTEX, já trabalhamos em mais de 100 ecommerces na plataforma, 
+        e desenvolvemos um método eficaz de trazer uma migração acessível e de alta qualidade para lojas que ainda 
+        não realizaram sua migração devido a altos valores do mercado.
+      </p>
+    </div>
+  <style>
+    /* Seção QUEM SOMOS */
+    .about {
+      background-color: #0b1120;
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+    }
+  
+    .about .container {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+  
+ 
+    .about h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .about p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: #d0d4db; /* Tom mais claro para o texto */
+    }
+  </style>
+  </section>
+  
+
+
+
+  <section class="platforms">
+    <div class="container">
+      <div class="line"></div>
+      <h2> + PLATAFORMAS</h2>
+      <div class="logos">
+        <img src="./images/logos/vtex.png" alt="VTEX">
+        <img src="./images/logos/decocx.png" alt="Deco.cx">
+        <img src="./images/logos/Shopify_Logo.png" alt="Shopify">
+        <img src="./images/logos/uappi_orange.png" alt="Uappi">
+        <img src="./images/logos/logo-wake-commerce.webp" alt="Wake">
+        <img src="./images/logos/woocommerce.png" alt="Woocommerce">
+      </div>
+    </div>
+  
+  <style>
+    /* Seção PLATAFORMAS */
+    .platforms {
+      background-color: #0b1120;
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+    }
+  
+    .platforms .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .platforms h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  
+    .platforms .logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    .platforms .logos img {
+      width: 200px;
+      height: 50px;
+      object-fit: contain;
+    }
+  </style>
+  </section>
+  
+  <section class="why-migrate">
+    <div class="container">
+      <div class="content">
+        <div class="block">
+          <img src="./images/content[/conversionrate.png" alt="Conversion Rate">
+          <div class="text">
+            <h3>Por que Migrar?</h3>
+            <p>
+              Estudos comprovam que seus clientes perdem o interesse na compra quando o tempo de carregamento do seu Ecommerce for maior que 2 segundos...
+            </p>
+            <p>
+              ...Como consequência disso, sua <span class="highlight">TAXA DE CONVERSÃO</span> diminui. Em outras palavras: Você está perdendo dinheiro!
+            </p>
+          </div>
+        </div>
+        <div class="block">
+          <div class="text">
+            <h3>Por que uma migração aumenta minha Taxa de Conversão?</h3>
+            <p>
+              As plataformas que trabalhamos utilizam tecnologias mais recentes, nas quais nossos desenvolvedores podem utilizar boas práticas de programação, com mais eficiência, e utilizando ferramentas novas de performance, não suportadas pelas tecnologias ultrapassadas.
+            </p>
+          </div>
+          <img src="./images/content[/increasingcarts.png" alt="Performance Graph">
+        </div>
+      </div>
+    </div>
+  
+  <style>
+    .why-migrate {
+      background-color: #0b1120;
+      color: #fff;
+      padding: 50px 20px;
+    }
+  
+    .why-migrate .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .why-migrate .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  
+    .why-migrate .block {
+      display: flex;
+      /* align-items: center; */
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    .why-migrate .block img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+  
+    .why-migrate .text {
+      flex: 1;
+      padding: 20px 0px;
+    }
+  
+    .why-migrate h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+  
+    .why-migrate p {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+  
+    .why-migrate .highlight {
+      color: #ff007f;
+      font-weight: bold;
+    }
+  </style>
+
+  </section>
+
+
+  <section class="performance-checker">
+        <div class="container">
+          <div class="form_left">
+          <h2>Digite seu site para calcular a performance atual:</h2>
+          <form id="performance-form">
+            <input 
+              type="url" 
+              id="url-input" 
+              placeholder="https://www.exemplo.com" 
+              required 
+            />
+            <button type="submit">Calcular</button>
+            </br> <small> *Pode levar até 2 minutos </small>
+          </form>
+        </div>
+        <div class="form_right">
+          <div id="loading-spinner" class="loading-spinner hidden"></div>
+
+          <div id="results" class="results hidden">
+            <div class="result-item">
+              <span>Performance:</span>
+              <div class="score-circle" id="performance-score"></div>
+              <small style="position: relative; top: 10px; font-weight: normal;"><a id="know_more" target="_blank" href="#"> Saiba mais </a></small>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    <style>
+        .performance-checker {
+        background-color: #0b1120;
+        color: #fff;
+        padding: 30px 20px;
+        font-family: Arial, sans-serif;
+        }
+
+        .performance-checker .container {
+        margin: 0 auto;
+        display: flex;   
+        align-items: center;
+        }
+
+        .form_right {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            flex-wrap: wrap;
+        }
+
+        #url-input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        color: #000;
+        }
+
+        button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #ff007f;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        .results {
+        margin-top: 20px;
+        text-align: left;
+        margin-top: 20px;
+        text-align: left;
+        padding: 40px;
+        background: #212121;
+        border-radius: 10px;
+        width: fit-content;
+        }
+
+        .result-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        flex-direction: column;
+        gap: 11px;
+        font-weight: bold;
+        width: fit-content;
+        }
+
+        .score-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ccc;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .score-circle.low {
+        background-color: #ff4b4b; /* Vermelho */
+        border: 3px outset #ff0000;
+        }
+
+        .score-circle.medium {
+        background-color: #ffa500; /* Laranja */
+        border: 3px outset #ffa600;
+
+        }
+
+        .score-circle.high {
+            background-color: #00c853; /* Verde */
+            border: 3px outset #2d9e01;
+        }
+
+        /* Estilo do spinner */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #ff007f; /* Cor principal */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+/* Esconder spinner */
+.hidden {
+  display: none;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+ 
+     
+     </style>
+     <script> 
+        document.getElementById('performance-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const urlInput = document.getElementById('url-input').value;
+        const resultsDiv = document.getElementById('results');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const linkKnowMore = document.getElementById('know_more');
+  
+        // Resetar o estado inicial
+        resultsDiv.classList.add('hidden');
+        loadingSpinner.classList.remove('hidden');
+
+        try {
+            linkKnowMore.attributes.href = encodeURIComponent(urlInput);
+            const response = await fetch(
+            `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(urlInput)}`
+            );
+            const data = await response.json();
+
+            if (data.lighthouseResult) {
+            const performanceScore = data.lighthouseResult.categories.performance.score * 100;
+
+            const scoreElement = document.getElementById('performance-score');
+            scoreElement.textContent = performanceScore;
+
+            if (performanceScore < 50) {
+                scoreElement.className = 'score-circle low';
+            } else if (performanceScore < 90) {
+                scoreElement.className = 'score-circle medium';
+            } else {
+                scoreElement.className = 'score-circle high';
+            }
+
+            resultsDiv.classList.remove('hidden');
+            } else {
+            alert('Não foi possível calcular as métricas. Verifique o URL.');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Erro ao conectar à API. Tente novamente mais tarde.');
+        } finally {
+            loadingSpinner.classList.add('hidden');
+        }
+});
+
+ 
+     
+         
+         
+     </script>
+  </section>
+
+  
+  
+  
+  
+  
+  
+</body>
+</html>
