@@ -15,6 +15,13 @@
     gtag('config', 'G-7PT173TJX2');
   </script>
 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KSS4MJ9L');</script>
+    <!-- End Google Tag Manager -->
+
   <style>
     /* Estilos gerais */
 
@@ -155,18 +162,24 @@
         max-width: 1200px!important;
     }
 
+    * {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS4MJ9L"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">StoreMaster</div>
     <nav>
       <a href="#">INÍCIO</a>
-      <a href="#">QUEM SOMOS</a>
-      <a href="#">POR QUE MIGRAR?</a>
-      <a href="#">PREÇOS</a>
-      <a href="#">CONTATO</a>
+      <a href="#about">QUEM SOMOS</a>
+      <a href="#question">POR QUE MIGRAR?</a>
+      <a href="#pricing">PREÇOS</a>
+      <a href="#contact">CONTATO</a>
     </nav>
     <a href="#" class="cta"> Quero Migrar Agora </a>
   </header>
@@ -181,12 +194,12 @@
       </div>
       <ul class="menu">
         <li><a href="#">INÍCIO</a></li>
-        <li><a href="#">QUEM SOMOS</a></li>
-        <li><a href="#">POR QUE MIGRAR?</a></li>
-        <li><a href="#">PREÇOS</a></li>
-        <li><a href="#">CONTATO</a></li>
+        <li><a href="#about">QUEM SOMOS</a></li>
+        <li><a href="#question">POR QUE MIGRAR?</a></li>
+        <li><a href="#pricing">PREÇOS</a></li>
+        <li><a href="#contact">CONTATO</a></li>
 
-        <li><a href="#" class="cta"> Quero Migrar Agora </a></li>
+        <li><a href="#contact" class="cta"> Quero Migrar Agora </a></li>
 
       </ul>
     </nav>
@@ -314,11 +327,11 @@
   <section class="hero">
     <div class="hero-content">
       <h1>UMA MIGRAÇÃO VTEX IO DESCOMPLICADA,<br>COM GO-LIVE EM ATÉ 30 DIAS</h1>
-      <a href="#" class="cta"> Quero Migrar Agora </a>
+      <a href="#contact" class="cta"> Quero Migrar Agora </a>
     </div>
   </section>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="line"></div>
       <h2>QUEM SOMOS</h2>
@@ -358,7 +371,7 @@
   </section>
   
 
-  <section class="why-migrate">
+  <section class="why-migrate" id="question">
     <div class="container">
       <div class="content">
         <div class="block">
@@ -483,7 +496,8 @@
   <section class="performance-checker">
     <div class="container">
       <div class="form_left">
-      <h2>Digite seu site para calcular a performance atual:</h2>
+      <h2>Como Está o Desempenho do Seu Site?</h2>
+      <p> Descubra em segundos se sua loja está perdendo vendas por falta de performance. </p>
       <small> *Pode levar até 2 minutos </small>
       <form id="performance-form">
         <input 
@@ -679,18 +693,18 @@
  </script>
 </section>
 
-    <a href="#" class="cta" style="text-align: center; display: flex ;max-width: 300px; margin: 50px auto; justify-content: center;"> Quero Migrar Agora </a>
+    <a href="#contact" class="cta" style="text-align: center; display: flex ;max-width: 300px; margin: 50px auto; justify-content: center;"> Quero Migrar Agora </a>
 
 
-    <section class="morePerformanceInfos">
+    <!-- <section class="morePerformanceInfos">
         <div class="container">
 
         </div>   
-    </section>
+    </section> -->
 
 
 
-  <section class="platforms">
+  <section class="platforms" id="platforms">
     <div class="container">
       <div class="line"></div>
       <h2> + PLATAFORMAS</h2>
@@ -742,7 +756,7 @@
 
     /* Seção principal */
 .pricing-section {
-  background-color: #0a0f28;
+  /* background-color: #0a0f28; */
   color: white;
   text-align: center;
   padding: 2rem;
@@ -845,7 +859,7 @@
   </style>
   </section>
 
-  <div class="pricing-section">
+  <section class="pricing-section" id="pricing">
     <h2 class="pricing-title">PREÇOS</h2>
     <p class="pricing-description">
       Temos um preço único e pagamento facilitado, para incentivar sua migração, basta clicar em "Eu quero" e você será encaminhado para falar conosco e tirar todas as suas dúvidas.
@@ -860,7 +874,7 @@
         <p class="payment-details">
           ou em até 3x de R$4.999 sem juros <br> no cartão ou <span>BOLETO BANCÁRIO</span>
         </p>
-        <button class="pricing-button">EU QUERO</button>
+        <a class="pricing-button" href="#contact">EU QUERO</a>
       </div>
   
       <!-- Card 2 -->
@@ -872,10 +886,10 @@
         <p class="payment-details">
           contrato mínimo de <span>10 horas mensais</span>
         </p>
-        <button class="pricing-button">QUERO SABER MAIS</button>
+        <a class="pricing-button" href="https://wa.me/5561993075173?text=Olá, quero saber mais sobre os planos de evolução/ongoing" target="_blank">QUERO SABER MAIS</a>
       </div>
     </div>
-  </div>
+  </section>
   
 
 
@@ -883,7 +897,7 @@
   <footer>
  
 
-        <div class="form-container container">
+        <section class="form-container container" id="contact">
             <h2 class="form-title">Preencha as informações abaixo e logo entraremos em contato</h2>
             <form id="contactForm" class="form-grid">
               <div>
@@ -904,8 +918,8 @@
                 </label>
                 
                 <label class="form-label">Faturamento anual:
-                <select class="form-input" id="earnings" name="earnings">
-                    <option value="" disabled >Selecionar</option>
+                <select class="form-input" id="earnings" name="earnings" required>
+                    <option value="" disabled selected >Selecionar</option>
                     <option value="0k-50k"> 0 - R$10,000</option>
                     <option value="10k-50k"> R$10,000 - R$50,000</option>
                     <option value="50k-100k">$50,000 - $100,000</option>
@@ -926,8 +940,8 @@
                 </label>
 
                 <label class="form-label">Serviço desejado:
-                    <select class="form-input" id="type" name="type">
-                      <option value="" disabled>Selecionar</option>
+                    <select class="form-input" id="type" name="type" required>
+                      <option value="" disabled selected>Selecionar</option>
                       <option value="migration"> Migração</option>
                       <option value="implant"> Implantação</option>
                       <option value="ongoing"> OnGoing / Evolução</option>
@@ -953,7 +967,7 @@
             <div id="spinner" class="spinner-overlay hidden">
               <div class="spinner"></div>
             </div>
-          </div>
+        </section>
 
           
 
@@ -1207,16 +1221,19 @@
   background-color: #1a1a1a;
   color: #f2f2f2;
   text-align: center;
-  padding: 20px 10px;
   font-size: 14px;
+  padding: 25px;
   font-family: Arial, sans-serif;
   border-top: 2px solid #ff0077; /* Um detalhe colorido para destacar */
+}
+
+.footer-container {
+  padding: 25px
 }
 
 .footer-container p {
   margin: 5px 0;
   line-height: 1.5;
-  padding: 25px;
   text-align: center;
 }
 
