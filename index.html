@@ -19,7 +19,8 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KSS4MJ9L');</script>
+    })(window,document,'script','dataLayer','GTM-KSS4MJ9L');
+    </script>
     <!-- End Google Tag Manager -->
 
   <style>
@@ -707,12 +708,11 @@
       <div class="line"></div>
       <h2> + PLATAFORMAS</h2>
       <div class="logos">
-        <img src="./images/logos/vtex.png" alt="VTEX">
-        <img src="./images/logos/decocx.png" alt="Deco.cx">
-        <img src="./images/logos/Shopify_Logo.png" alt="Shopify">
-        <img src="./images/logos/uappi_orange.png" alt="Uappi">
-        <img src="./images/logos/logo-wake-commerce.webp" alt="Wake">
-        <img src="./images/logos/woocommerce.png" alt="Woocommerce">
+        <img src="https://placehold.co/600x400/png" alt="Placeholder">       
+        <img src="https://placehold.co/600x400/png" alt="Placeholder">       
+        <img src="https://placehold.co/600x400/png" alt="Placeholder">       
+        <img src="https://placehold.co/600x400/png" alt="Placeholder">       
+        <img src="https://placehold.co/600x400/png" alt="Placeholder">       
       </div>
     </div>
   
@@ -739,7 +739,7 @@
     .platforms .logos {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      /* flex-wrap: wrap; */
       row-gap: 55px;
       column-gap: 100px;
     }
@@ -1146,7 +1146,6 @@
 
                 const firebaseApp = initializeApp(firebaseConfig);
                 const database = getDatabase(firebaseApp);
-
                 const contactsRef = ref(database, "contatos");
                 const newContactRef = push(contactsRef);
                 set(newContactRef, formData);
